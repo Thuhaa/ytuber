@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<title>Ytuber | Downloader</title>
+</head>
+<style type="text/css">
+	body{
+		margin: 0;
+	}
+	.logo{
+		width: 60px;
+		height: 60px;
+		float: left;
+	}
+	nav{
+		background-color: grey;
+		height: 60px;
+		margin-bottom: 20px;
+	}
+	.nav-list{
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display:inline-flex;
+	}
+	li{
+		margin-left: 20px;
+	}
+	#mid-container{
+		height: 570px;
+		width: 60%;
+		margin:auto;
+	}
+	#form-container{
+		width: 100%;
+	}
+	#url{
+		height: 30px;
+		width: 100%;
+	}
+	/*#url-form{
+		padding: 10px;
+	}*/
+	#submit{
+		float: right;
+		margin-top: 10px;
+		background-color: blue;
+		height: 40px;
+		width: 100px;
+		color: white;
+		text-decoration: none;
+		border: blue;
+		box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+	}
+	#submit:hover{
+		 background-color: red;
+	}
+</style>
+<body>		
+	<nav>
+		<div class="row">
+		<div id="logo">
+			<img class="logo" src="{% static 'downloader/img/goalspatial.jpg' %}">
+		</div>
+		<div>
+		<ul class="nav nav-list">
+			<li>Home</li>
+			<li>Downloader</li>
+			<li>Another App</li>
+			<li>Second App</li>
+		</ul>
+		</div>
+		</div>
+	</nav>
+	<div id="mid-container">
+		<div id="form-container">
+			<form action="{% url 'get-video' %}" method="GET" id="url-form">
+				<input id="url" type="text" name="url" placeholder="Enter the url to the Youtube video">
+				<input id="submit" type="Submit" name="Submit">
+			</form>
+		</div>
+	</div>
+
+</body>
+</html>
